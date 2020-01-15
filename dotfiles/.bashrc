@@ -23,7 +23,7 @@ alias l='ls -CF'
 alias aur=yay
 alias vimode='set -o vi && bind "set show-mode-in-prompt on"'
 alias emacsmode='set -o emacs && bind "set show-mode-in-prompt off"'
-alias getip='curl -s http://checkip.dyndns.org | grep -o "IP Address:.*</body>" | sed "s/<\/*[^>]*>//g"'
+alias getip='echo -e "\n$(curl -s http://checkip.dyndns.org | grep -o "IP Address:.*</body>" | sed "s/<\/*[^>]*>//g")\n"'
 alias weather2='echo -e "\n$(curl -s wttr.in/{Houston,Hesperia}?format="%20%20%l,%20%c%20%20%C,%20%t,%20%w")\n"'
 alias ipinfo='echo -e "$(curl -s ipinfo.io | sed "s/[{},\"]//g" | grep -v missingauth)\n"'
 
