@@ -32,6 +32,7 @@ weather() { echo; curl -s wttr.in/$1 | sed "s/Follow.*//g"; }
 weather3() { echo -e "\n$(curl -s wttr.in/{$(echo $@ | sed 's/ /%20/g')}?format="%13%20%20%l,%20%c%20%20%C,%20%t,%20%w")\n"; }
 clbin() { cat $1 | curl -F 'clbin=<-' https://clbin.com; }
 ipinfo() { echo -e "$(ping -4 -c 1 $1 2> /dev/null | curl -s ipinfo.io/$(awk 'NR==1 { print substr($3,2,length($3)-2) }') | sed "s/[{},\"]//g" | grep -v missingauth)\n"; }
+github() { if [[ -z "$1" ]]; then r=kungfubeaner; else r=$1; fi; curl -s https://api.github.com/users/$r/repos?per_page=1000 | jq .[].git_url | sed 's/git:/https:/g;s/\"//g'; }
 
 PS1='[\[\033[01;32m\]\u@\h\[\033[0m\]:\[\033[00;36m\]\w\[\033[00m\]]\$ '
 
