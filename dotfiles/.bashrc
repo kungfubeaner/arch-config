@@ -21,6 +21,7 @@ alias la='ls -AF'
 alias l='ls -CF'
 
 alias aur=yay
+alias trans='trans :en+es -b'
 alias vimode='set -o vi && bind "set show-mode-in-prompt on"'
 alias emacsmode='set -o emacs && bind "set show-mode-in-prompt off"'
 alias getip='echo -e "\n  $(curl -s http://checkip.dyndns.org | sed "s/<\/*[^>]*>//g" | grep -o "IP Address:.*")\n"'
