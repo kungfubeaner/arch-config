@@ -35,7 +35,8 @@ clbin() { cat $1 | curl -F 'clbin=<-' https://clbin.com; }
 ipinfo() { echo -e "$(ping -4 -c 1 $1 2> /dev/null | curl -s ipinfo.io/$(awk 'NR==1 { print substr($3,2,length($3)-2) }') | sed "s/[{},\"]//g" | grep -v missingauth)\n"; }
 github() { if [[ -z "$1" ]]; then r=kungfubeaner; else r=$1; fi; curl -s https://api.github.com/users/$r/repos?per_page=1000 | jq .[].git_url | sed 's/git:/https:/g;s/\"//g'; }
 gitclone() { if [[ -z "$1" ]]; then r=kungfubeaner; else r=$1; fi; dialog --stdout --no-tags --menu "Choose: " 25 80 30 $(curl -s https://api.github.com/users/$r/repos?per_page=1000 | jq .[].git_url | sed 's/git:/https:/g;s/\"//g' | sed -n 's/\(.*\)/\1 \1/p') | xargs git clone; }
-define() { curl -s https://www.lexico.com/en/definition/$1 | sed -n 's/<meta name="description" content="What.* as \(.*\)".*$/\n\1\n/p'; }
+define() { curl -s https://www.lexico.com/en/definition/$1 | sed -n 's/<meta name="description" content="What.* as \(.*\)".*$/\n\1\n/p' | sed "s/&#39;/'/g"; }
+transdef() { echo; trans $1 ${@:2} && define $1 | trans ${@:2}; }
 
 PS1='[\[\033[01;32m\]\u@\h\[\033[0m\]:\[\033[00;36m\]\w\[\033[00m\]]\$ '
 
