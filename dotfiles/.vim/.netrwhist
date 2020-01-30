@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
-let g:netrw_dirhist_5='/home/dman79/.config/mpd'
-let g:netrw_dirhist_4='/home/dman79/.config'
-let g:netrw_dirhist_3='/home/dman79/.config/bspwm'
-let g:netrw_dirhist_2='/home/dman79/.config'
-let g:netrw_dirhist_1='/home/dman79/.config/sxhkd'
