@@ -1,31 +1,66 @@
 #!/bin/bash
 
-sudo pacman -S $(cat pkglist)
-yay -S $(cat aurlist)
+ln -sf /usr/bin/nvim /usr/bin/vim
+ln -sf /usr/bin/nvim /usr/bin/vi
 
-sudo chown root:root lightdm-mini-greeter.conf
-sudo chown root:root slick-greeter.conf
+sed -i 's/^#Color/Color/g' /etc/pacman.conf
+awk -i inplace '/#\[multilib\]/ { print substr($0,2); getline; print substr($0,2); next }; !/#\[multilib\]/ { print $0 }' /etc/pacman.conf
 
-sudo mv lightdm-mini-greeter.conf /etc/lightdm
-sudo mv slick-greeter.conf /etc/lightdm
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
+ln -sf /usr/share/zoneinfo/$(curl -s ipinfo.io | sed 's/[{},"]//g' | grep timezone | cut -d: -f 2 | sed 's/^ //g') /etc/localtime
+locale-gen
+hwclock -w
+
+echo -ne "\nHost name: " && read hname
+echo $hname > /etc/hostname
+
+echo "# Static table lookup for hostnames." > /etc/hosts
+echo "# See hosts(5) for details." >> /etc/hosts
+echo >> /etc/hosts
+echo "127.0.0.1	localhost" >> /etc/hosts
+echo "::1		localhost" >> /etc/hosts
+echo "127.0.1.1	$hname.localdomain	$hname" >> /etc/hosts
+
+pacman -Syyu arch-install-scripts
+
+echo "# Static information about the filesystems." > /etc/fstab
+echo "# See fstab(5) for details." >> /etc/fstab
+echo >> /etc/fstab
+echo "# <file system> <dir> <type> <options> <dump> <pass>" >> /etc/fstab
+echo >> /etc/fstab
+genfstab -U / >> /etc/fstab
+
+dd if=/dev/zero of=/swapfile bs=1M count=2048 status=progress
+chmod 600 /swapfile
+mkswap /swapfile
+echo -e "\n/swapfile none swap sw 0 0" >> /etc/fstab
+
+pacman -Rns arch-install-scripts
+
+curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
+chmod a+rx /usr/bin/youtube-dl
+
+pacman -S $(cat pkglist)
+
+mv lightdm-mini-greeter.conf /etc/lightdm
+mv slick-greeter.conf /etc/lightdm
 
 cd theming
 unzip Black-Frost-Suru_1.6.2.zip
 cd ..
-sudo chown -R root:root theming
 
 cd theming
-sudo mv Black-Frost-Suru /usr/share/icons
+mv Black-Frost-Suru /usr/share/icons
 
 cd .icons
-sudo mv * /usr/share/icons
+mv * /usr/share/icons
 cd ..
 
 cd .themes
-sudo mv * /usr/share/themes
+mv * /usr/share/themes
 cd ..
 
 cd .wallpapers
-sudo mkdir /usr/share/backgrounds
-sudo mv * /usr/share/backgrounds
-cd ../..
+mkdir /usr/share/backgrounds
+mv * /usr/share/backgrounds
