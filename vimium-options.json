@@ -1,0 +1,30 @@
+{
+  "settingsVersion": "1.66",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://192.168.1.104/*",
+      "passKeys": "x"
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": true,
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap <<\nunmap >>\nmap > moveTabRight\nmap < moveTabLeft\nmap .. goNext\nmap ,, goPrevious",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": true,
+  "searchEngines": "nf: https://www.netflix.com/search?q=%s netflix\neb: https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_sacat=0&_nkw=%s eBay\nyi: http://images.search.yahoo.com/search/images;_ylt=A0PDoX3lZYxNnXMAmkKLuLkF?p=%s&ei=utf-8&iscqry=&fr=sfp Yahoo Images\nyv: http://video.search.yahoo.com/search/video;_ylt=A0SO8ZwxZIxNnz4AAeT6w8QF;_ylu=X3oDMTBncGdyMzQ0BHNlYwNzZWFyY2gEdnRpZAM-?p=%s&ei=utf-8&fr=sfp Yahoo Videos\nyh: http://search.yahoo.com/search;_ylt=A0oG7n6lZIxNIGoAv5ml87UF?p=%s&fr=sfp&fr2=&iscqry= Yahoo\nwk: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\nrb: https://rarbg.to/torrents.php?search=%s RARBG Torrents\ny: https://search.yahoo.com/search;_ylt=Awr9DtwLRCpd3OEAGBBDDWVH?fr=sfp&iscqry=&p=%s Yahoo\nserial: https://www.smartserials.com/search_serial.php?serials=%s serial\nimdb: https://www.imdb.com/find?ref_=nv_sr_fn&s=all&q=%s imdb\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\ng: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\nyt: https://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\nduck: https://duckduckgo.com/?q=%s DuckDuckGo\naz: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "http://search.yahoo.com/search;_ylt=A0oG7n6lZIxNIGoAv5ml87UF?p=%s&fr=sfp&fr2=&iscqry=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n  /* linkhint boxes */\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\n  border: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n  /* linkhint text */\n  color: black;\n  font-weight: bold;\n  font-size: 12px;\n}\n\ninput#vomnibarInput.vimiumReset {\n\tcolor: #CCC !important;\n  background-color: #111 !important;\n}\n\n#vomnibar {\n   border-color: black;\n   background-color: black;\n}\n\n#vomnibar .vomnibarSearchArea {\n   background-color: #222;\n   border-bottom: #3f3f3f;\n}\n\n#vomnibar input {\n   border-color: #424242;\n   color: #CCC !important;\n   background-color: #111 !important\n}\n\n#vomnibar ul {\n    background-color: #222;\n    margin: 0px;\n}\n\n#vomnibar li {\n   border-bottom: #3f3f3f;\n}\n\n#vomnibar li .vomnibarUrl {\n   color: #3ab29b;\n}\n\n#vomnibar li .vomnibarMatch {\n   color: #CCC;\n}\n\n#vomnibar li.vomnibarSelected {\n    background-color: #363636;\n}\n\n#vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {\n   color: #CCC;\n}\n\n#vomnibar li em, #vomnibar li .vomnibarTitle {\n   color: #ddd;\n}"
+}
