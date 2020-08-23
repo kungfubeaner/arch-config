@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#sudo pacman -S $(cat pkglist)
+#yay -S $(cat aurlist)
+
+#sudo chown root:root lightdm-mini-greeter.conf
+#sudo chown root:root slick-greeter.conf
+
+#sudo mv lightdm-mini-greeter.conf /etc/lightdm
+#sudo mv slick-greeter.conf /etc/lightdm
+
+#cd theming
+#unzip Black-Frost-Suru_1.6.2.zip
+#cd ..
+#sudo chown -R root:root theming
+
+cd theming
+#sudo mv Black-Frost-Suru /usr/share/icons
+
+#cd .icons
+#sudo mv * /usr/share/icons
+#cd ..
+
+#cd .themes
+#sudo mv * /usr/share/themes
+#cd ..
+
+cd .wallpapers
+sudo mkdir /usr/share/backgrounds
+sudo mv * /usr/share/backgrounds
+cd ../..
+
