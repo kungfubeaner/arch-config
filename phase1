@@ -1,5 +1,13 @@
 #!/bin/bash
 
+echo -ne "\nHostname: " && read hname
+echo -ne "Username: " && read usrname
+
+useradd -m $usrname
+usermod -aG wheel,storage,video,audio,optical dman79
+passwd $usrname
+passwd -l root
+
 sed -i 's/^#Color/Color/g' /etc/pacman.conf
 awk -i inplace '/#\[multilib\]/ { print substr($0,2); getline; print substr($0,2); next }; !/#\[multilib\]/ { print $0 }' /etc/pacman.conf
 
@@ -9,9 +17,7 @@ ln -sf /usr/share/zoneinfo/$(curl -s ipinfo.io | sed 's/[{},"]//g' | grep timezo
 locale-gen
 hwclock -w
 
-echo -ne "\nHostname: " && read hname
 echo $hname > /etc/hostname
-
 echo "# Static table lookup for hostnames." > /etc/hosts
 echo "# See hosts(5) for details." >> /etc/hosts
 echo >> /etc/hosts
