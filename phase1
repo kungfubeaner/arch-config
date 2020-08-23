@@ -3,6 +3,8 @@
 echo -ne "\nHostname: " && read hname
 echo -ne "Username: " && read usrname
 
+sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
+
 useradd -m $usrname
 usermod -aG wheel,storage,video,audio,optical dman79
 passwd $usrname
