@@ -6,7 +6,7 @@ echo -ne "Username: " && read usrname
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 
 useradd -m $usrname
-usermod -aG wheel,storage,video,audio,optical dman79
+usermod -aG wheel,storage,video,audio,optical $usrname
 passwd $usrname
 passwd -l root
 
