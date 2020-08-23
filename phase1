@@ -50,9 +50,7 @@ ln -sf /usr/bin/nvim /usr/bin/vim
 ln -sf /usr/bin/nvim /usr/bin/vi
 
 sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
-
 sed -i 's/^#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf
-sed -i 's/dman79/$usrname/g' /etc/lightdm/mini-greeter.conf
 sed -i 's/dman79/$usrname/g' /etc/lightdm/lightdm-mini-greeter.conf
 
 mv lightdm-mini-greeter.conf /etc/lightdm
