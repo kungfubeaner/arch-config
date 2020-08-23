@@ -1,8 +1,5 @@
 #!/bin/bash
 
-ln -sf /usr/bin/nvim /usr/bin/vim
-ln -sf /usr/bin/nvim /usr/bin/vi
-
 sed -i 's/^#Color/Color/g' /etc/pacman.conf
 awk -i inplace '/#\[multilib\]/ { print substr($0,2); getline; print substr($0,2); next }; !/#\[multilib\]/ { print $0 }' /etc/pacman.conf
 
@@ -42,6 +39,9 @@ curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
 pacman -S $(cat pkglist)
+
+ln -sf /usr/bin/nvim /usr/bin/vim
+ln -sf /usr/bin/nvim /usr/bin/vi
 
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
