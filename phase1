@@ -14,6 +14,7 @@ do
 	[[ "$usrname" != "$usrname2" ]] || break
 done
 
+echo " "
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 
 useradd -m $usrname
