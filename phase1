@@ -13,7 +13,7 @@ do
 	echo -ne "Enter username: " && read usrname
 	echo -ne "Conirm username: " && read usrname2
 	echo " "
-	[[ "usrname" != "usrname2" ]] || break
+	[[ "$usrname" != "$usrname2" ]] || break
 done
 
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
