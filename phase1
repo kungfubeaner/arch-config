@@ -74,6 +74,18 @@ sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-gree
 sed -i 's/^#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf
 sed -i "s/dman79/$usrname/g" /etc/lightdm/lightdm-mini-greeter.conf
 
+dirname=$(pwd)
+cd /home/$usrname
+sudo -u $usrname git clone https://aur.archlinux.org/yay
+cd /home/$usrname/yay
+sudo -u $usrname makepkg -sri
+cd ..
+rm -rf yay
+
+cd $dirname
+sudo -u $usrname yay -S $(cat aurlist)
+sudo -u $usrname yay -Sc
+
 cd theming
 unzip Black-Frost-Suru_1.6.2.zip
 cd ..
@@ -93,13 +105,10 @@ cd .wallpapers
 mkdir /usr/share/backgrounds
 mv * /usr/share/backgrounds
 
-cd /home/$usrname
-sudo -u $usrname git clone https://aur.archlinux.org/yay
-cd /home/$usrname/yay
-sudo -u $usrname makepkg -sri
-cd ..
-rm -rf yay
+systemctl enable systemd-networkd
+systemctl enable systemd-resolved
 
-cd
-cd arch-config
-sudo -u $usrname yay -S $(cat aurlist)
+echo " "
+echo "**************************"
+echo " remember to install grub "
+echo "**************************"
