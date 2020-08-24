@@ -1,7 +1,20 @@
 #!/bin/bash
 
-echo -ne "\nHostname: " && read hname
-echo -ne "Username: " && read usrname
+while true
+do
+	echo -ne "\nEnter hostname: " && read hname
+	echo -ne "\nConfirm hostname: " && read hname2
+	echo " "
+	[[ "$hname" != "$hname" ]] || break
+done
+
+while true
+do
+	echo -ne "Enter username: " && read usrname
+	echo -ne "Conirm username: " && read usrname2
+	echo " "
+	[[ "usrname" != "usrname2" ]] || break
+done
 
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
 
