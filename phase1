@@ -96,6 +96,10 @@ cd $dirname
 sudo -u $usrname yay -S $(cat aurlist)
 sudo -u $usrname yay -Sc
 
+ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
+ln -sf /usr/bin/neroAacEnc /usr/bin/neroaacenc
+ln -sf /usr/bin/neroAacDec /usr/bin/neroaacdec
+
 cd theming
 unzip Black-Frost-Suru_1.6.2.zip
 cd ..
