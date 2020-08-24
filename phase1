@@ -5,7 +5,7 @@ do
 	echo -ne "\nEnter hostname: " && read hname
 	echo -ne "\nConfirm hostname: " && read hname2
 	echo " "
-	[[ "$hname" != "$hname" ]] || break
+	[[ "$hname" != "$hname2" ]] || break
 done
 
 while true
