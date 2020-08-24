@@ -62,6 +62,15 @@ pacman -Rns arch-install-scripts
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
+systemctl enable sshd
+systemctl enable systemd-networkd
+systemctl enable systemd-resolved
+
+echo '[Match]' > /etc/systemd/network/20-wired.network
+echo 'Name=en*' >> /etc/systemd/network/20-wired.network
+echo '[Network]' >> /etc/systemd/network/20-wired.network
+echo 'DHCP=yes' >> /etc/systemd/network/20-wired.network
+
 pacman -S $(cat pkglist)
 
 ln -sf /usr/bin/nvim /usr/bin/vim
@@ -104,9 +113,6 @@ cd ..
 cd .wallpapers
 mkdir /usr/share/backgrounds
 mv * /usr/share/backgrounds
-
-systemctl enable systemd-networkd
-systemctl enable systemd-resolved
 
 echo " "
 echo "**************************"
