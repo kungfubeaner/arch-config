@@ -9,8 +9,8 @@ done
 
 while true
 do
-	echo -ne "Enter username: " && read usrname
-	echo -ne "Conirm username: " && read usrname2
+	echo -ne "\nEnter username: " && read usrname
+	echo -ne "Confirm username: " && read usrname2
 	[[ "$usrname" != "$usrname2" ]] || break
 done
 
