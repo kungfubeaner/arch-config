@@ -56,7 +56,7 @@ mv slick-greeter.conf /etc/lightdm
 
 sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
 sed -i 's/^#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf
-sed -i 's/dman79/$usrname/g' /etc/lightdm/lightdm-mini-greeter.conf
+sed -i "s/dman79/$usrname/g" /etc/lightdm/lightdm-mini-greeter.conf
 
 cd theming
 unzip Black-Frost-Suru_1.6.2.zip
