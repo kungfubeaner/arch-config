@@ -39,7 +39,7 @@ echo "127.0.0.1	localhost" >> /etc/hosts
 echo "::1		localhost" >> /etc/hosts
 echo "127.0.1.1	$hname.localdomain	$hname" >> /etc/hosts
 
-pacman -Syyu arch-install-scripts
+echo y | pacman -Syyu arch-install-scripts
 
 echo "# Static information about the filesystems." > /etc/fstab
 echo "# See fstab(5) for details." >> /etc/fstab
@@ -58,12 +58,12 @@ mkswap /swapfile
 echo "/swapfile none swap sw 0 0" >> /etc/fstab
 echo " "
 
-pacman -Rns arch-install-scripts
+echo y | pacman -Rns arch-install-scripts
 
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
-pacman -S $(cat pkglist)
+echo y | pacman -S $(cat pkglist)
 
 systemctl enable NetworkManager
 systemctl enable sshd
@@ -87,7 +87,7 @@ rm -rf yay
 
 cd $dirname
 sudo -u $usrname yay -S $(cat aurlist)
-sudo -u $usrname yay -Sc
+echo -e "y\n\y\n\y\n\y" | sudo -u $usrname yay -Sc
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
 ln -sf /usr/bin/neroAacEnc /usr/bin/neroaacenc
