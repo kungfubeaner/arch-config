@@ -117,8 +117,7 @@ mkdir /usr/share/backgrounds
 mv * /usr/share/backgrounds
 
 cd $dirname
-mkdir /home/$usrname/ff-addon-settings
-chown $usrname:$username /home/$usrname/ff-addon-settings
+sudo -u $usrname mkdir /home/$usrname/ff-addon-settings
 mv *.json /home/$usrname/ff-addon-settings
 mv *.txt /home/$usrname/ff-addon-settings
 chown $usrname:$usrname /home/$usrname/ff-addon-settings/*.json
