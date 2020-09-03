@@ -86,7 +86,7 @@ cd ..
 rm -rf yay
 
 cd $dirname
-sudo -u $usrname yay -S $(cat aurlist)
+echo -e "y\n\y\n\y\n\y\n\n" | sudo -u $usrname yay -S $(cat aurlist)
 echo -e "y\n\y\n\y\n\y" | sudo -u $usrname yay -Sc
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
@@ -95,9 +95,6 @@ ln -sf /usr/bin/neroAacDec /usr/bin/neroaacdec
 
 cd theming
 unzip Black-Frost-Suru_1.6.2.zip
-cd ..
-
-cd theming
 mv Black-Frost-Suru /usr/share/icons
 
 cd .icons
@@ -111,6 +108,15 @@ cd ..
 cd .wallpapers
 mkdir /usr/share/backgrounds
 mv * /usr/share/backgrounds
+
+cd ..
+mkdir /home/$usrname/ff-addon-settings
+mv *.json /home/$usrname/ff-addon-settings
+mv *.txt /home/$usrname/ff-addon-settings
+chown $usrname:$usrname /home/$usrname/ff-addon-settings/*.json
+chown $usrname:$username /home/$usrname/ff-addon-settings/*.txt
+cd ..
+rm -rf arch-config
 
 echo " "
 echo "**************************"
