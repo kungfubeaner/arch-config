@@ -123,8 +123,6 @@ mv *.json /home/$usrname/ff-addon-settings
 mv *.txt /home/$usrname/ff-addon-settings
 chown $usrname:$usrname /home/$usrname/ff-addon-settings/*.json
 chown $usrname:$username /home/$usrname/ff-addon-settings/*.txt
-cd ..
-rm -rf arch-config
 
 echo " "
 echo "**************************"
