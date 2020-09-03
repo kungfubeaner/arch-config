@@ -85,6 +85,13 @@ sudo -u $usrname makepkg -sri
 cd ..
 rm -rf yay
 
+git clone https://github.com/kungfubeaner/my-st-terminal-setup
+cd my-st-terminal-setup
+sudo -u $usrname make
+sudo make install
+cd ..
+rm -rf my-st-terminal-setup
+
 cd $dirname
 echo -e "y\n\y\n\y\n\y\n\n" | sudo -u $usrname yay -S $(cat aurlist)
 echo -e "y\n\y\n\y\n\y" | sudo -u $usrname yay -Sc
