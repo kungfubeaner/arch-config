@@ -93,7 +93,7 @@ cd ..
 rm -rf my-st-terminal-setup
 
 cd $dirname
-echo -e "y\n1\n1\ny\nn\ny" | sudo -u $usrname yay -S $(cat aurlist)
+sudo -u $usrname yay -S $(cat aurlist)
 echo -e "y\ny\ny\ny" | sudo -u $usrname yay -Sc
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
