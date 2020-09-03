@@ -93,7 +93,7 @@ cd ..
 rm -rf my-st-terminal-setup
 
 cd $dirname
-echo -e "y\n\y\n\y\n\y\n\n" | sudo -u $usrname yay -S $(cat aurlist)
+echo -e "y\n\y\n\y\n\y\n\n\y" | sudo -u $usrname yay -S $(cat aurlist)
 echo -e "y\n\y\n\y\n\y" | sudo -u $usrname yay -Sc
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
@@ -116,8 +116,9 @@ cd .wallpapers
 mkdir /usr/share/backgrounds
 mv * /usr/share/backgrounds
 
-cd ..
+cd $dirname
 mkdir /home/$usrname/ff-addon-settings
+chown $usrname:$username /home/$usrname/ff-addon-settings
 mv *.json /home/$usrname/ff-addon-settings
 mv *.txt /home/$usrname/ff-addon-settings
 chown $usrname:$usrname /home/$usrname/ff-addon-settings/*.json
