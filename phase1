@@ -81,7 +81,7 @@ dirname=$(pwd)
 cd /home/$usrname
 sudo -u $usrname git clone https://aur.archlinux.org/yay
 cd /home/$usrname/yay
-echo -e "y\n\y\n\y" | sudo -u $usrname makepkg -sri
+sudo -u echo -e "y\n\y\n\y" | $usrname makepkg -sri
 cd ..
 rm -rf yay
 
