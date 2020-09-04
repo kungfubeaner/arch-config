@@ -48,6 +48,8 @@ echo "# <file system> <dir> <type> <options> <dump> <pass>" >> /etc/fstab
 echo >> /etc/fstab
 genfstab -U / >> /etc/fstab
 
+echo y | pacman -Rns arch-install-scripts
+
 echo " "
 echo "********************************"
 echo "     creating swap file.....    "
@@ -58,15 +60,13 @@ mkswap /swapfile
 echo "/swapfile none swap sw 0 0" >> /etc/fstab
 echo " "
 
-echo y | pacman -Rns arch-install-scripts
-
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
 echo y | pacman -S $(cat pkglist)
 
-systemctl enable NetworkManager
 systemctl enable sshd
+systemctl enable NetworkManager
 ln -sf /usr/bin/nvim /usr/bin/vim
 ln -sf /usr/bin/nvim /usr/bin/vi
 
