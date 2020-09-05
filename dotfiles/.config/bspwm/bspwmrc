@@ -8,7 +8,7 @@ sleep 0.3
 sxhkd &
 compton &
 xsetroot -cursor_name left_ptr &
-feh --bg-fill /usr/share/backgrounds/motherboard.jpg &
+feh --bg-fill /usr/share/backgrounds/frost-moon.jpg &
 
 #while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done &
 polybar example &
