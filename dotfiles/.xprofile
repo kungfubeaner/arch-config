@@ -1,0 +1,1 @@
+xmodmap -e "keycode 135 = Super_R"

@@ -1,0 +1,54 @@
+st.font:  Anka/Coder:pixelsize=14:antialias=true:autohint=true
+st.font2: Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true
+
+!--------- Default ST Theme ----------
+
+st.alpha:	0.85
+vim.alpha:	0.6
+
+st.background:  #000000
+st.foreground:  #aaaaaa
+st.cursorColor: #aaaaaa
+
+color0:         #000000
+color1:         red3
+color2:         green3
+color3:         yellow3
+color4:         blue2
+color5:         magenta3
+color6:         cyan3
+color7:         gray90
+color8:         gray50
+color9:         red
+color10:        green
+color11:        yellow
+color12:        #5c5cff
+color13:        magenta
+color14:        cyan
+color15:        #aaaaaa
+
+!--------- Dracula ST Theme ----------
+
+!st.alpha:       0.85
+!st.background:  #282a36
+!st.foreground:  #f8f8f2
+!st.cursorColor: #f8f8f2
+
+!color0:         #000000
+!color1:         #ff5555
+!color2:         #50fa7b
+!color3:         #f1fa8c
+!color4:         #bd93f9
+!color5:         #ff79c6
+!color6:         #8be9fd
+!color7:         #bbbbbb
+!color8:         #44475a
+!color9:         #ff5555
+!color10:        #50fa7b
+!color11:        #f1fa8c
+!color12:        #bd93f9
+!color13:        #ff79c6
+!color14:        #8be9fd
+!color15:        #aaaaaa
+
+!-------------------------------------
