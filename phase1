@@ -39,7 +39,7 @@ echo "127.0.0.1	localhost" >> /etc/hosts
 echo "::1		localhost" >> /etc/hosts
 echo "127.0.1.1	$hname.localdomain	$hname" >> /etc/hosts
 
-echo y | pacman -Syyu arch-install-scripts
+pacman -Syyu arch-install-scripts --noconfirm
 
 echo "# Static information about the filesystems." > /etc/fstab
 echo "# See fstab(5) for details." >> /etc/fstab
@@ -48,7 +48,7 @@ echo "# <file system> <dir> <type> <options> <dump> <pass>" >> /etc/fstab
 echo >> /etc/fstab
 genfstab -U / >> /etc/fstab
 
-echo y | pacman -Rns arch-install-scripts
+pacman -Rns arch-install-scripts --noconfirm
 
 echo " "
 echo "********************************"
@@ -92,7 +92,7 @@ cd ..
 rm -rf yay
 
 cd $dirname
-sudo -u $usrname yay -S $(cat aurlist) --removemake --answerclean None --answerdiff None --answeredit None
+sudo -u $usrname yay -S $(cat aurlist) --removemake --answerclean None --answerdiff None --answeredit None --noconfirm
 echo -e "y\ny\ny\ny" | sudo -u $usrname yay -Sc
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
