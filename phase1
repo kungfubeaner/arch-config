@@ -87,12 +87,12 @@ dirname=$(pwd)
 cd /home/$usrname
 sudo -u $usrname git clone https://aur.archlinux.org/yay
 cd /home/$usrname/yay
-sudo -u $usrname makepkg -sri
+sudo -u $usrname makepkg -sri --noconfirm
 cd ..
 rm -rf yay
 
 cd $dirname
-sudo -u $usrname yay -S $(cat aurlist)
+sudo -u $usrname yay -S $(cat aurlist) --removemake
 echo -e "y\ny\ny\ny" | sudo -u $usrname yay -Sc
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
