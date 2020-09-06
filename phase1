@@ -93,7 +93,7 @@ rm -rf yay
 
 cd $dirname
 sudo -u $usrname yay -S $(cat aurlist) --removemake --answerclean None --answerdiff None --answeredit None --noconfirm
-echo -e "y\ny\ny\ny" | sudo -u $usrname yay -Sc
+sudo -u $usrname yay -Sc --noconfirm
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
 ln -sf /usr/bin/neroAacEnc /usr/bin/neroaacenc
