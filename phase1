@@ -63,7 +63,7 @@ echo " "
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
-echo -e "\ny" | pacman -S $(cat pkglist)
+pacman -S $(cat pkglist) --noconfirm
 
 systemctl enable sshd
 systemctl enable NetworkManager
