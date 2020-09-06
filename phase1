@@ -73,7 +73,6 @@ ln -sf /usr/bin/nvim /usr/bin/vi
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
 
-sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf
 sed -i 's/^#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf
 sed -i "s/dman79/$usrname/g" /etc/lightdm/lightdm-mini-greeter.conf
 
@@ -126,10 +125,15 @@ chown $usrname:$username /home/$usrname/ff-addon-settings/*.txt
 sudo -u $usrname cp -r dotfiles/.config/* /home/$usrname/.config
 sudo -u $usrname mkdir /home/$usrname/scripts
 sudo -u $usrname cp -r dotfiles/scripts/* /home/$usrname/scripts
+sudo -u $usrname mkdir /home/$usrname/.config/gtk-3.0
+sudo -u $usrname cp -r dotfiles/gtk-3.0/* /home/$usrname/.config/gtk-3.0
 rm -rf dotfiles/.config
 sudo -u $usrname cp -r dotfiles/.???* /home/$usrname/
+sudo -u $usrname ln -s /home/$usrname/.vim /home/$usrname/.config/nvim
+sudo -u $usrname ln -s /home/$usrname/.vimrc /home/$usrname/.vim/init.vim
 
 systemctl enable lightdm
+sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf
 
 echo " "
 echo "**************************"
