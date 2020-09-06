@@ -128,7 +128,7 @@ sudo -u $usrname cp -r dotfiles/scripts/* /home/$usrname/scripts
 sudo -u $usrname mkdir /home/$usrname/.config/gtk-3.0
 sudo -u $usrname cp -r dotfiles/gtk-3.0/* /home/$usrname/.config/gtk-3.0
 rm -rf dotfiles/.config
-sed -i 's/dman79/$usrname/g' /dotfiles/.gtkrc-2.0
+sed -i "s/dman79/$usrname/g" dotfiles/.gtkrc-2.0
 sudo -u $usrname cp -r dotfiles/.???* /home/$usrname/
 sudo -u $usrname ln -s /home/$usrname/.vim /home/$usrname/.config/nvim
 sudo -u $usrname ln -s /home/$usrname/.vimrc /home/$usrname/.vim/init.vim
