@@ -123,6 +123,14 @@ mv *.txt /home/$usrname/ff-addon-settings
 chown $usrname:$usrname /home/$usrname/ff-addon-settings/*.json
 chown $usrname:$username /home/$usrname/ff-addon-settings/*.txt
 
+sudo -u $usrname cp -r dotfiles/.config/* /home/$usrname/.config
+sudo -u $usrname mkdir /home/$usrname/scripts
+sudo -u $usrname cp -r dotfiles/scripts/* /home/$usrname/scripts
+rm -rf dotfiles/.config
+sudo -u $usrname cp -r dotfiles/.???* /home/$usrname/
+
+systemctl enable lightdm
+
 echo " "
 echo "**************************"
 echo " remember to install grub "
