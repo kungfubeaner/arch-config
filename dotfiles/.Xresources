@@ -1,5 +1,5 @@
-st.font:  Anka/Coder:pixelsize=14:antialias=true:autohint=true
-st.font2: Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true
+st.font:  xos4 Terminus:pixelsize=14:antialias=true:autohint=true
+st.font2: Font Awesome 5 Free Solid:pixelsize=14:antialias=true:autohint=true
 
 !--------- Default ST Theme ----------
 
