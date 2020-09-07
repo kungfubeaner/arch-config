@@ -16,7 +16,6 @@ done
 
 echo " "
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
-sed -i 's/#%wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
 useradd -m $usrname
 usermod -aG wheel,storage,video,audio,optical $usrname
@@ -95,7 +94,6 @@ rm -rf yay
 cd $dirname
 sudo -u $usrname yay -S $(cat aurlist) --removemake --answerclean None --answerdiff None --answeredit None --noconfirm
 sudo -u $usrname yay -Sc --noconfirm
-sed -i 's/%wheel ALL=(ALL) NOPASSWD: ALL/#%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
 ln -sf /usr/bin/neroAacEnc /usr/bin/neroaacenc
