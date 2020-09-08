@@ -64,7 +64,7 @@ echo " "
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
-pacman -S $(cat pkglist) --noconfirm
+pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm
 
 systemctl enable sshd
 systemctl enable NetworkManager
@@ -93,7 +93,7 @@ cd ..
 rm -rf yay
 
 cd $dirname
-sudo -u $usrname yay -S $(cat aurlist) --removemake --answerclean None --answerdiff None --answeredit None --noconfirm
+sudo -u $usrname yay -S $(cat aurlist | tr '\n' ' ') --removemake --answerclean None --answerdiff None --answeredit None --noconfirm
 sudo -u $usrname yay -Sc --noconfirm
 sed -i 's/%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
 
