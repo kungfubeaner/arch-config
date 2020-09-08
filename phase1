@@ -145,6 +145,7 @@ sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greet
 
 #sed -i 's/bspwm/mate/g' /home/$usrname/.dmrc
 pip list --outdated | awk 'NR>2 { print $1 }' | xargs -l1 pip install --upgrade
+cd; rm -rf arch-config
 
 echo " "
 echo "*************************** "
@@ -152,5 +153,3 @@ echo " umount -R /mnt             "
 echo " remove installation media  "
 echo " reboot                     "
 echo "*************************** "
-
-cd; rm -rf arch-config
