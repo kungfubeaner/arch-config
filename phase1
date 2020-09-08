@@ -26,6 +26,10 @@ passwd -l root
 sed -i 's/^#Color/Color/g' /etc/pacman.conf
 awk -i inplace '/#\[multilib\]/ { print substr($0,2); getline; print substr($0,2); next }; !/#\[multilib\]/ { print $0 }' /etc/pacman.conf
 
+if ! grep -F pwfeedback /etc/sudoers; then
+	awk -i inplace '/# Defaults\!REBOOT \!log_output/ { print $0); !/# Defaults\!REBOOT \!log_output/ { print $0 }' /etc/sudoers
+fi
+
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 ln -sf /usr/share/zoneinfo/$(curl -s ipinfo.io | sed 's/[{},"]//g' | grep timezone | cut -d: -f 2 | sed 's/^ //g') /etc/localtime
