@@ -143,6 +143,8 @@ systemctl enable lightdm
 sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf
 
 echo " "
-echo "**************************"
-echo " remember to install grub "
-echo "**************************"
+echo "*************************** "
+echo " umount -R /mnt             "
+echo " remove installation media  "
+echo " reboot                     "
+echo "*************************** "
