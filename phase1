@@ -141,6 +141,8 @@ sudo -u $usrname ln -s /home/$usrname/.vimrc /home/$usrname/.vim/init.vim
 
 systemctl enable lightdm
 sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf
+
+pip list --outdated | awk 'NR>2 { print $1 }' | xargs -l1 pip install --upgrade
 cd; rm -rf arch-config; exit
 
 echo " "
