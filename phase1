@@ -27,7 +27,7 @@ sed -i 's/^#Color/Color/g' /etc/pacman.conf
 awk -i inplace '/#\[multilib\]/ { print substr($0,2); getline; print substr($0,2); next }; !/#\[multilib\]/ { print $0 }' /etc/pacman.conf
 
 if ! grep -F pwfeedback /etc/sudoers; then
-	awk -i inplace '/# Defaults!REBOOT !log_output/ { print $0"\n\nDefaults pwfeedback" }; !/# Defaults!REBOOT !log_output/ { print $0 }' /etc/sudoers
+	awk -i inplace '/^# Defaults!REBOOT !log_output/ { print $0"\n\nDefaults pwfeedback" }; !/^# Defaults!REBOOT !log_output/ { print $0 }' /etc/sudoers
 fi
 
 echo LANG=en_US.UTF-8 > /etc/locale.conf
