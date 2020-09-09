@@ -15,23 +15,23 @@ do
 done
 
 echo " "
-sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers
-sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
+sed -i 's/# \(%wheel ALL=(ALL) ALL\)/\1/g' /etc/sudoers
+sed -i 's/# \(%wheel ALL=(ALL) NOPASSWD: ALL\)/\1/g' /etc/sudoers
 
 useradd -m $usrname
 usermod -aG wheel,storage,video,audio,optical $usrname
 while ! passwd $usrname; do echo " "; done
-passwd -l root
+echo; passwd -l root
 
 sed -i 's/^#Color/Color/g' /etc/pacman.conf
 awk -i inplace '/#\[multilib\]/ { print substr($0,2); getline; print substr($0,2); next }; !/#\[multilib\]/ { print $0 }' /etc/pacman.conf
 
 if ! grep -F pwfeedback /etc/sudoers; then
-	awk -i inplace '/^# Defaults!REBOOT !log_output/ { print $0"\n\nDefaults pwfeedback" }; !/^# Defaults!REBOOT !log_output/ { print $0 }' /etc/sudoers
+	sudo sed -i 's/\(# Defaults!REBOOT !log_output\)/\1\n\nDefaults pwfeedback/g' /etc/sudoers
 fi
 
 echo LANG=en_US.UTF-8 > /etc/locale.conf
-sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
+sed -i 's/^#\(en_US.UTF-8 UTF-8\)/\1/g' /etc/locale.gen
 ln -sf /usr/share/zoneinfo/$(curl -s ipinfo.io | sed 's/[{},"]//g' | grep timezone | cut -d: -f 2 | sed 's/^ //g') /etc/localtime
 locale-gen
 hwclock -w
@@ -79,7 +79,7 @@ ln -sf /usr/bin/nvim /usr/bin/vi
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
 
-sed -i 's/^#user-session=default/user-session=default/g' /etc/lightdm/lightdm.conf
+sed -i 's/^#\(user-session=default\)/\1/g' /etc/lightdm/lightdm.conf
 sed -i "s/dman79/$usrname/g" /etc/lightdm/lightdm-mini-greeter.conf
 
 git clone https://github.com/kungfubeaner/my-st-terminal-setup
@@ -100,7 +100,7 @@ rm -rf yay
 cd $dirname
 sudo -u $usrname yay -S $(cat aurlist | tr '\n' ' ') --removemake --answerclean None --answerdiff None --answeredit None --noconfirm
 sudo -u $usrname yay -Sc --noconfirm
-sed -i 's/%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
+sed -i 's/\(%wheel ALL=(ALL) NOPASSWD: ALL\)/#\1/g' /etc/sudoers
 
 ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag
 ln -sf /usr/bin/neroAacEnc /usr/bin/neroaacenc
