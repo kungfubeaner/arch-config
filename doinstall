@@ -73,7 +73,7 @@ pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm
 
 systemctl enable sshd
 systemctl enable NetworkManager
-if grep neovim pkglist > /dev/null; then; ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
+if grep neovim pkglist > /dev/null; then ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
 
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
