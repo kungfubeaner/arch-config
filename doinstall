@@ -68,13 +68,12 @@ echo " "
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
-if ! nvim --version > /dev/null 2>&1; then pacman -S neovim  --noconfirm; fi
+if grep neovim pkglist > /dev/null; then if nvim --version > /dev/null 2>&1; then sed -i '/neovim/d' pkglist; fi; fi
 pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm
 
 systemctl enable sshd
 systemctl enable NetworkManager
-ln -sf /usr/bin/nvim /usr/bin/vim
-ln -sf /usr/bin/nvim /usr/bin/vi
+if grep neovim pkglist > /dev/null; then; ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
 
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
@@ -137,8 +136,8 @@ sudo -u $usrname cp -r dotfiles/gtk-3.0/* /home/$usrname/.config/gtk-3.0
 rm -rf dotfiles/.config
 sed -i "s/dman79/$usrname/g" dotfiles/.gtkrc-2.0
 sudo -u $usrname cp -r dotfiles/.???* /home/$usrname/
-sudo -u $usrname ln -s /home/$usrname/.vim /home/$usrname/.config/nvim
-sudo -u $usrname ln -s /home/$usrname/.vimrc /home/$usrname/.vim/init.vim
+if grep neovim pkglist > /dev/null; then sudo -u $usrname ln -s /home/$usrname/.vim /home/$usrname/.config/nvim; fi
+if grep neovim pkglist > /dev/null; then sudo -u $usrname ln -s /home/$usrname/.vimrc /home/$usrname/.vim/init.vim; fi
 
 systemctl enable lightdm
 sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf
