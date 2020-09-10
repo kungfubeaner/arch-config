@@ -32,7 +32,7 @@ fi
 
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 sed -i 's/^#\(en_US.UTF-8 UTF-8\)/\1/g' /etc/locale.gen
-ln -sf /usr/share/zoneinfo/$(curl -s ipinfo.io | sed -n 's/[: ,"]//g;s/timezone//gp') /etc/localtime
+ln -sf /usr/share/zoneinfo/$(curl -s ipinfo.io | sed -n 's/.*"timezone": "\(.*\)",/\1/gp') /etc/localtime
 locale-gen
 hwclock -w
 
