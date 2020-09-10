@@ -1,2 +1,2 @@
 # arch-config
-my arch linux configuration
+my arch linux automated installer
