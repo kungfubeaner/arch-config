@@ -68,7 +68,7 @@ echo " "
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/bin/youtube-dl
 chmod a+rx /usr/bin/youtube-dl
 
-if grep neovim pkglist > /dev/null; then if vim --version > /dev/null 2>&1; then pacman -Rns vim; fi; fi
+if grep neovim pkglist > /dev/null; then if vim --version > /dev/null 2>&1; then pacman -Rns vim --noconfirm; fi; fi
 if grep neovim pkglist > /dev/null; then if nvim --version > /dev/null 2>&1; then sed -i '/neovim/d' pkglist; fi; fi
 pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm
 
