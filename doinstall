@@ -21,7 +21,7 @@ sed -i 's/# \(%wheel ALL=(ALL) NOPASSWD: ALL\)/\1/g' /etc/sudoers
 useradd -m $usrname
 usermod -aG wheel,storage,video,audio,optical $usrname
 while ! passwd $usrname; do echo " "; done
-echo; passwd -l root
+passwd -l root; echo
 
 sed -i 's/^#Color/Color/g' /etc/pacman.conf
 awk -i inplace '/#\[multilib\]/ { print substr($0,2); getline; print substr($0,2); next }; !/#\[multilib\]/ { print $0 }' /etc/pacman.conf
