@@ -101,9 +101,9 @@ sudo -u $usrname yay -S $(cat aurlist | tr '\n' ' ') --removemake --answerclean 
 sudo -u $usrname yay -Sc --noconfirm
 sed -i 's/\(%wheel ALL=(ALL) NOPASSWD: ALL\)/# \1/g' /etc/sudoers
 
-if grep neroaactag-bin pkglist > /dev/null; then ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag; fi
-if grep neroaacenc-bin pkglist > /dev/null; then ln -sf /usr/bin/neroAacEnc /usr/bin/neroaacenc; fi
-if grep neroaacdec-bin pkglist > /dev/null; then ln -sf /usr/bin/neroAacDec /usr/bin/neroaacdec; fi
+if grep neroaactag-bin aurlist > /dev/null; then ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag; fi
+if grep neroaacenc-bin aurlist > /dev/null; then ln -sf /usr/bin/neroAacEnc /usr/bin/neroaacenc; fi
+if grep neroaacdec-bin aurlist > /dev/null; then ln -sf /usr/bin/neroAacDec /usr/bin/neroaacdec; fi
 
 cd theming
 unzip Black-Frost-Suru_1.6.2.zip
