@@ -74,7 +74,9 @@ pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm
 
 systemctl enable sshd
 systemctl enable NetworkManager
+
 if nvim --version > /dev/null 2>&1; then ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
+echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
 
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
