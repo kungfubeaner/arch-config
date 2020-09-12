@@ -1,9 +1,6 @@
 aircrack-ng
 alsa-utils
 networkmanager
-wpa_supplicant
-dhcpcd
-netctl
 dialog
 feh
 firefox
