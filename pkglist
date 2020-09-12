@@ -1,9 +1,8 @@
 aircrack-ng
 alsa-utils
 networkmanager
-wireless_tools
 wpa_supplicant
-dhclient
+dhcpcd
 netctl
 dialog
 feh
