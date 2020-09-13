@@ -76,7 +76,7 @@ systemctl enable sshd
 systemctl enable NetworkManager
 
 if nvim --version > /dev/null 2>&1; then ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
-echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
+mkdir -p /etc/iwd; echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
 
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
@@ -84,7 +84,7 @@ mv slick-greeter.conf /etc/lightdm
 sed -i 's/^#\(user-session=default\)/\1/g' /etc/lightdm/lightdm.conf
 sed -i "s/dman79/$usrname/g" /etc/lightdm/lightdm-mini-greeter.conf
 
-git clone https://github.com/kungfubeaner/my-st-terminal-setup
+echo; git clone https://github.com/kungfubeaner/my-st-terminal-setup
 cd my-st-terminal-setup
 sudo -u $usrname make
 sudo make install
@@ -93,7 +93,7 @@ rm -rf my-st-terminal-setup
 
 dirname=$(pwd)
 cd /home/$usrname
-sudo -u $usrname git clone https://aur.archlinux.org/yay
+echo; sudo -u $usrname git clone https://aur.archlinux.org/yay
 cd /home/$usrname/yay
 sudo -u $usrname makepkg -sri --noconfirm
 cd ..
