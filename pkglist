@@ -17,7 +17,6 @@ neovim
 neofetch
 noto-fonts
 ttf-liberation
-opus-tools
 perl-rename
 pulseaudio
 pulseaudio-alsa
@@ -36,7 +35,6 @@ xorg-server
 xorg-xinit
 xorg-xrandr
 xorg-xsetroot
-xorg-server-devel
 xsel
 ttf-inconsolata
 python-pip
