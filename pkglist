@@ -1,6 +1,7 @@
 aircrack-ng
 alsa-utils
 iwd
+dhcpcd
 openresolv
 dialog
 feh
