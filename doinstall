@@ -77,7 +77,7 @@ systemctl enable NetworkManager
 
 if nvim --version > /dev/null 2>&1; then ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
 mkdir -p /etc/iwd; echo -e "[General]\nEnableNetworkConfiguration=true\n[Network]\nNameResolvingService=resolvconf" > /etc/iwd/main.conf
-sed -i 's/^\([Service]\)$/\1\nRuntimeDirectory=resolvconf\nReadWritePaths=/etc/resolv.conf' /etc/systemd/system/multi-user.targets.wants
+sed -i 's/^\([Service]\)$/\1\nRuntimeDirectory=resolvconf\nReadWritePaths=/etc/resolv.conf' /usr/lib/systemd/system/iwd.service
 
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
