@@ -77,6 +77,10 @@ systemctl enable NetworkManager
 
 if nvim --version > /dev/null 2>&1; then ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
 mkdir -p /etc/iwd; echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
+echo -d "\n" >> /etc/resolve.conf
+echo "nameserver 192.168.1.1" >> /etc/resolve.conf
+echo "nameserver 2001:558:feed:1" >> /etc/resolve.conf
+echo "nameserver 2001:558:feed:2" >> /etc/resolve.conf
 
 mv lightdm-mini-greeter.conf /etc/lightdm
 mv slick-greeter.conf /etc/lightdm
