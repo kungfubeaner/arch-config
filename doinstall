@@ -73,7 +73,7 @@ if grep neovim pkglist > /dev/null; then if nvim --version > /dev/null 2>&1; the
 pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm
 
 systemctl enable sshd
-systemctl enable NetworkManager
+systemctl enable dhcpcd
 
 if nvim --version > /dev/null 2>&1; then ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
 mkdir -p /etc/iwd; echo -e "[General]\nEnableNetworkConfiguration=true\n[Network]\nNameResolvingService=resolvconf" > /etc/iwd/main.conf
