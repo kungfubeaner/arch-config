@@ -143,7 +143,7 @@ sudo -u $usrname cp -r dotfiles/.???* /home/$usrname/
 if nvim --version > /dev/null 2>&1; then sudo -u $usrname ln -s /home/$usrname/.vim /home/$usrname/.config/nvim; fi
 if nvim --version > /dev/null 2>&1; then sudo -u $usrname ln -s /home/$usrname/.vimrc /home/$usrname/.vim/init.vim; fi
 
-systemctl enable lightdm
+echo; systemctl enable lightdm
 sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf
 
 #sed -i 's/bspwm/mate/g' /home/$usrname/.dmrc
