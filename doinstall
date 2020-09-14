@@ -74,7 +74,7 @@ if ! pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm; then exit; fi
 
 systemctl enable sshd
 systemctl enable dhcpcd
-#systemctl enable iwd
+systemctl enable iwd
 
 if nvim --version > /dev/null 2>&1; then ln -sf /usr/bin/nvim /usr/bin/vim; ln -sf /usr/bin/nvim /usr/bin/vi; fi
 mkdir -p /etc/iwd; echo -e "[General]\nEnableNetworkConfiguration=true\n[Network]\nNameResolvingService=resolvconf" > /etc/iwd/main.conf
