@@ -70,7 +70,7 @@ chmod a+rx /usr/bin/youtube-dl
 
 if grep neovim pkglist > /dev/null; then if vim --version > /dev/null 2>&1; then pacman -Rns vim --noconfirm; fi; fi
 if grep neovim pkglist > /dev/null; then if nvim --version > /dev/null 2>&1; then sed -i '/neovim/d' pkglist; fi; fi
-pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm
+pacman -S $(cat pkglist | tr '\n' ' ') --noconfirm || exit
 
 systemctl enable sshd
 systemctl enable dhcpcd
@@ -102,7 +102,7 @@ cd ..
 rm -rf yay
 
 cd $dirname
-sudo -u $usrname yay -S $(cat aurlist | tr '\n' ' ') --removemake --answerclean None --answerdiff None --answeredit None --noconfirm
+sudo -u $usrname yay -S $(cat aurlist | tr '\n' ' ') --removemake --answerclean None --answerdiff None --answeredit None --noconfirm || exit
 sudo -u $usrname yay -Sc --noconfirm
 sed -i 's/\(%wheel ALL=(ALL) NOPASSWD: ALL\)/# \1/g' /etc/sudoers
 
