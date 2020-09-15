@@ -1,4 +1,5 @@
 #!/bin/bash
 
+#setfont ter-v16n
 reflector -l 200 -a 12 -p http -c 'United States' --sort rate --save /etc/pacman.d/mirrorlist
 head /etc/pacman.d/mirrorlist
