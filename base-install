@@ -1,0 +1,12 @@
+#!/bin/bash
+
+pacstrap /mnt linux linux-firmware base base-devel grub git
+pacman -Sy unzip --noconfirm
+curl -sLo /mnt/root/arch-config.zip https://github.com/kungfubeaner/arch-config/archive/master.zip
+cd /mnt/root
+unzip arch-config.zip > /dev/null
+mv arch-config-master arch-config
+rm arch-config.zip; cd
+arch-chroot /mnt
+umount -R /mnt
+shutdown now
