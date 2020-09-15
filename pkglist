@@ -4,6 +4,7 @@ iwd
 dhcpcd
 openresolv
 dialog
+dosfstools
 feh
 firefox
 gdb
