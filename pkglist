@@ -23,6 +23,7 @@ perl-rename
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
+reflector
 reaver
 rofi
 sxhkd
