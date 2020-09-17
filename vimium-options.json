@@ -16,7 +16,7 @@
   "keyMappings": "# Insert your preferred key mappings here.\nunmap <<\nunmap >>\nmap > moveTabRight\nmap < moveTabLeft\nmap .. goNext\nmap ,, goPrevious",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
-  "newTabUrl": "search.yahoo.com",
+  "newTabUrl": "https://search.yahoo.com",
   "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
   "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
   "regexFindMode": false,
