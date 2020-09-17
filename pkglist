@@ -5,6 +5,7 @@ dhcpcd
 openresolv
 dialog
 dosfstools
+dconf-editor
 feh
 firefox
 gdb
