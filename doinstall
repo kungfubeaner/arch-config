@@ -149,7 +149,8 @@ sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greet
 
 #sed -i 's/bspwm/mate/g' /home/$usrname/.dmrc
 echo; pip list --outdated | awk 'NR>2 && !/PyGObject/ { print $1 }' | xargs -l1 pip install --upgrade
-cd; rm -rf arch-config
+cd; dconf load /org/mate/ < dconf.org.mate.backup
+rm -rf arch-config
 
 echo " "
 echo "*************************** "
