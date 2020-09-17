@@ -80,7 +80,7 @@ motion-acceleration=10.0
 motion-threshold=10
 
 [desktop/session]
-session-start=1600348103
+session-start=1600358914
 show-hidden-apps=false
 
 [engrampa/general]
