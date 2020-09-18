@@ -103,7 +103,7 @@ rm -rf yay
 
 cd $dirname
 if ! sudo -u $usrname yay -S $(cat aurlist | tr '\n' ' ') --removemake --answerclean None --answerdiff None --answeredit None --noconfirm; then exit; fi
-sudo -u $usrname yay -Sc --noconfirm
+yes | sudo -u $usrname yay -Scc
 sed -i 's/\(%wheel ALL=(ALL) NOPASSWD: ALL\)/# \1/g' /etc/sudoers
 
 if grep neroaactag-bin aurlist > /dev/null; then ln -sf /usr/bin/neroAacTag /usr/bin/neroaactag; fi
