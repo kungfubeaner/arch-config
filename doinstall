@@ -147,7 +147,7 @@ if nvim --version > /dev/null 2>&1; then sudo -u $usrname ln -s /home/$usrname/.
 echo; systemctl enable lightdm
 sed -i 's/^#greeter-session=example-gtk-gnome/greeter-session=lightdm-mini-greeter/g' /etc/lightdm/lightdm.conf
 
-#sed -i 's/bspwm/mate/g' /home/$usrname/.dmrc
+#sed -i 's/mate/bspwm/g' /home/$usrname/.dmrc
 echo; pip list --outdated | awk 'NR>2 && !/PyGObject/ { print $1 }' | xargs -l1 pip install --upgrade
 rm -rf /root/arch-config
 
