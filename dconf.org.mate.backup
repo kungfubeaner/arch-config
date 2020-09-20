@@ -1,5 +1,5 @@
 [caja/window-state]
-geometry='800x550+398+148'
+geometry='800x550+238+82'
 maximized=false
 start-with-sidebar=true
 start-with-status-bar=true
@@ -80,7 +80,7 @@ motion-acceleration=10.0
 motion-threshold=10
 
 [desktop/session]
-session-start=1600358914
+session-start=1600627229
 show-hidden-apps=false
 
 [engrampa/general]
@@ -265,6 +265,7 @@ include-border=true
 include-pointer=true
 
 [settings-daemon/plugins/media-keys]
+home='<Mod4>e'
 power='<Primary><Alt><Mod4>s'
 screensaver='<Primary><Alt><Mod4>l'
 volume-down='<Shift>KP_Add'
