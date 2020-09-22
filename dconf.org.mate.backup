@@ -1,5 +1,5 @@
 [caja/window-state]
-geometry='800x550+238+82'
+geometry='978x556+180+71'
 maximized=false
 start-with-sidebar=true
 start-with-status-bar=true
@@ -70,7 +70,7 @@ binding='<Mod4>o'
 name='Handle URL'
 
 [desktop/peripherals/keyboard]
-numlock-state='off'
+numlock-state='on'
 
 [desktop/peripherals/mouse]
 accel-profile='default'
@@ -80,7 +80,7 @@ motion-acceleration=10.0
 motion-threshold=10
 
 [desktop/session]
-session-start=1600627229
+session-start=1600740864
 show-hidden-apps=false
 
 [engrampa/general]
@@ -111,6 +111,7 @@ cycle-group='disabled'
 cycle-windows='<Mod4>k'
 cycle-windows-backward='<Mod4>j'
 run-command-terminal='disabled'
+show-desktop='<Mod4>d'
 switch-to-workspace-1='<Mod4>1'
 switch-to-workspace-10='<Mod4>0'
 switch-to-workspace-2='<Mod4>2'
@@ -240,7 +241,7 @@ expand=true
 orientation='bottom'
 screen=0
 size=24
-y=744
+y=876
 y-bottom=0
 
 [panel/toplevels/top/background]
