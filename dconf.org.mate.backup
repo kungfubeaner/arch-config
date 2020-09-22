@@ -1,5 +1,5 @@
 [caja/window-state]
-geometry='978x556+180+71'
+geometry='978x526+178+128'
 maximized=false
 start-with-sidebar=true
 start-with-status-bar=true
@@ -76,11 +76,13 @@ numlock-state='on'
 accel-profile='default'
 cursor-size=32
 cursor-theme='UbuntaeroStudio_v1.0'
+locate-pointer=false
+middle-button-enabled=false
 motion-acceleration=10.0
 motion-threshold=10
 
 [desktop/session]
-session-start=1600740864
+session-start=1600814489
 show-hidden-apps=false
 
 [engrampa/general]
@@ -97,6 +99,13 @@ sort-type='ascending'
 sidebar-width=200
 window-height=480
 window-width=600
+
+[eom/ui]
+image-collection=false
+
+[eom/view]
+background-color='rgb(0,0,0)'
+use-background-color=true
 
 [marco/general]
 action-double-click-titlebar='toggle_maximize'
@@ -122,8 +131,8 @@ switch-to-workspace-6='<Mod4>6'
 switch-to-workspace-7='<Mod4>7'
 switch-to-workspace-8='<Mod4>8'
 switch-to-workspace-9='<Mod4>9'
-switch-to-workspace-left='<Mod4>u'
-switch-to-workspace-right='<Mod4>i'
+switch-to-workspace-left='<Mod4>h'
+switch-to-workspace-right='<Mod4>l'
 
 [marco/window-keybindings]
 begin-move='<Mod4>m'
@@ -147,8 +156,8 @@ move-to-workspace-6='<Shift><Mod4>asciicircum'
 move-to-workspace-7='<Shift><Mod4>ampersand'
 move-to-workspace-8='<Shift><Mod4>asterisk'
 move-to-workspace-9='<Shift><Mod4>9'
-move-to-workspace-left='<Shift><Mod4>u'
-move-to-workspace-right='<Shift><Mod4>i'
+move-to-workspace-left='<Mod4>u'
+move-to-workspace-right='<Mod4>i'
 tile-to-corner-ne='<Alt><Mod4>k'
 tile-to-corner-nw='<Shift><Alt><Mod4>k'
 tile-to-corner-se='<Alt><Mod4>j'
@@ -241,7 +250,7 @@ expand=true
 orientation='bottom'
 screen=0
 size=24
-y=876
+y=744
 y-bottom=0
 
 [panel/toplevels/top/background]
@@ -264,13 +273,20 @@ border-effect='none'
 delay=0
 include-border=true
 include-pointer=true
+last-save-directory='file:///home/dman79/Desktop'
 
 [settings-daemon/plugins/media-keys]
 home='<Mod4>e'
+next='<Mod4>Right'
+pause='disabled'
+play='<Mod4>End'
 power='<Primary><Alt><Mod4>s'
+previous='<Mod4>Left'
 screensaver='<Primary><Alt><Mod4>l'
-volume-down='<Shift>KP_Add'
-volume-up='<Shift>KP_Subtract'
+stop='<Mod4>Delete'
+volume-down='<Mod4>Down'
+volume-mute='<Mod4>Home'
+volume-up='<Mod4>Up'
 
 [terminal/profiles/default]
 background-color='#FFFFFFFFDDDD'
