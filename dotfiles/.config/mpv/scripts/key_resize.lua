@@ -13,15 +13,23 @@ function grow_window()
 end
 
 function window_width_preset()
-	W = mp.get_property_number("dwidth")
-	nscale = 464 / W
-	mp.set_property_number("window-scale", nscale)
+	--W = mp.get_property_number("dwidth")
+	--nscale = 474 / W
+	--mp.set_property_number("window-scale", nscale)
+	os.execute('xdotool getactivewindow windowsize 29% 29%')
+	os.execute('xdotool getactivewindow windowmove 1115 143')
 end
 
 function window_width_60percent()
+	--W = mp.get_property_number("dwidth")
+	--nscale = (1600 * 0.7) / W
+	--mp.set_property_number("window-scale", nscale)
+	os.execute('xdotool getactivewindow windowsize 70% 70%')
 	W = mp.get_property_number("dwidth")
-	nscale = (1600 * 0.6) / W
-	mp.set_property_number("window-scale", nscale)
+	H = mp.get_property_number("dheight")
+	X = math.abs((1600 * 0.5) - (W * 0.5)) + 50
+	Y = math.abs((900 * 0.5) - (H * 0.5)) + 50
+	os.execute('xdotool getactivewindow windowmove ' .. X .. ' ' .. Y)
 end
 
 mp.register_script_message("Shrink_Window", shrink_window)
