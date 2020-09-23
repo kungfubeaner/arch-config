@@ -73,7 +73,7 @@ nnoremap <A-K> <C-w>K
 nnoremap <A-L> <C-w>L
 nnoremap <A-H> <C-w>H
 nnoremap <A-w> :w<cr>
-inoremap <A-w> <esc>:w<cr>i
+inoremap <A-w> <esc>:w<cr>
 nnoremap <A-q> :q<cr>
 inoremap <A-q> <esc>:q<cr>
 nnoremap <A-Q> :q!<cr>
