@@ -29,6 +29,7 @@ alias weather2='echo -e "\n$(curl -s "wttr.in/{Houston,Hesperia}?format=%20%20%l
 alias gold='curl -sL https://kitco.com | sed -n "s/.*AU-low.>\([0-9]\{1,4\}\.[0-9]\{2\}\).*AU-high.>\([0-9]\{1,4\}\.[0-9]\{2\}\).*$/\n  Gold Price:\n  low:\1  high:\2\n/p"'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias mapscii='telnet mapscii.me'
+alias cbplay='devour mpv --volume=0 $(~/temp/regx/main -u)'
 
 moon() { echo; curl -s wttr.in/Moon@$1 | head -n 24; }
 weather() { echo; curl -s wttr.in/$1 | sed "s/Follow.*//g"; }
