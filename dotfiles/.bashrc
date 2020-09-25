@@ -29,7 +29,6 @@ alias weather2='echo -e "\n$(curl -s "wttr.in/{Houston,Hesperia}?format=%20%20%l
 alias gold='curl -sL https://kitco.com | sed -n "s/.*AU-low.>\([0-9]\{1,4\}\.[0-9]\{2\}\).*AU-high.>\([0-9]\{1,4\}\.[0-9]\{2\}\).*$/\n  Gold Price:\n  low:\1  high:\2\n/p"'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias mapscii='telnet mapscii.me'
-alias cbplay='devour mpv --volume=0 $(~/temp/regx/main -u)'
 
 moon() { echo; curl -s wttr.in/Moon@$1 | head -n 24; }
 weather() { echo; curl -s wttr.in/$1 | sed "s/Follow.*//g"; }
@@ -41,6 +40,7 @@ gitclone() { if [[ -z "$1" ]]; then r=kungfubeaner; else r=$1; fi; dialog --stdo
 define() { curl -s https://www.lexico.com/en/definition/$1 | sed -n 's/<meta name="description" content="What.* as \(.*\)".*$/\n\1\n/p' | sed "s/&#39;/'/g"; }
 transdef() { echo; trans $1 ${@:2} && define $1 | trans ${@:2}; }
 mdless() { glow -p -s dark "$@"; }
+cbplay() { if [[ -z "$1" ]]; then r=; else r=?page=$1; fi; devour mpv --volume=0 $(curl -sL "https://chaturbate.com/female-cams/$r" | sed -n 's/<img src=".*\/\(.*\)\.jpg?[0-9]\+" width="180".*$/https:\/\/chaturbate.com\/\1\//p'); }
 
 PS1='[\[\033[01;32m\]\u@\h\[\033[0m\]:\[\033[00;36m\]\w\[\033[00m\]]\$ '
 
