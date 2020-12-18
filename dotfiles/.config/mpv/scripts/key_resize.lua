@@ -33,7 +33,27 @@ function window_width_60percent()
 	os.execute('xdotool getactivewindow windowmove ' .. X .. ' ' .. Y)
 end
 
+function window_move_down()
+	os.execute('xdo move -y +10')
+end
+
+function window_move_up()
+	os.execute('xdo move -y -10')
+end
+
+function window_move_left()
+	os.execute('xdo move -x -10')
+end
+
+function window_move_right()
+	os.execute('xdo move -x +10')
+end
+
 mp.register_script_message("Shrink_Window", shrink_window)
 mp.register_script_message("Grow_Window", grow_window)
 mp.register_script_message("Window_Width_Preset", window_width_preset)
 mp.register_script_message("Window_Width_60percent", window_width_60percent)
+mp.register_script_message("Window_Move_Down", window_move_down)
+mp.register_script_message("Window_Move_Up", window_move_up)
+mp.register_script_message("Window_Move_Left", window_move_left)
+mp.register_script_message("Window_Move_Right", window_move_right)
