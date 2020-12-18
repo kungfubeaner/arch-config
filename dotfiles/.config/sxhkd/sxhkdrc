@@ -89,7 +89,7 @@ super + {u,i}
 	#bspc wm -h on
 
 super + o
-	~/scripts/handleurl "$(xsel -ob)"
+	~/scripts/handleurl
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
