@@ -18,8 +18,8 @@
     border:  1px;
     padding: 0px;
 	border-radius:	5px;
-	border-color:	#3AB29B;
 	border-color:	#7AA9B2;
+	border-color:	#3AB29B;
 }
 
 #mainbox {
