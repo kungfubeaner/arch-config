@@ -5,6 +5,7 @@
     font:                        "Cantarell 11";
     prompt-font:                 "Cantarell 10";
     prompt-background:           #1a8771;
+    prompt-background:           #216659;
     prompt-foreground:           #111111;
     prompt-padding:              4px;
     alternate-normal-background: #18191D;
