@@ -1,28 +1,30 @@
 #!/bin/bash
 
-if [[ "$(xsel -ob)" == *".jpg" ]]; then
-	feh "$(xsel -ob)"
+cb=$(xsel -ob)
+
+if [[ "$cb" == *".jpg" ]]; then
+	feh "$1"
 	exit
 fi
 
-if [[ "$(xsel -ob)" == "https://chaturbate.com/"*"/" ]]; then
-	mpv --volume=0 "$(curl -s -N $(xsel -ob) | grep -m1 -o https://.*m3u8 | sed 's/\\u002D/-/g')"
+if [[ "$cb" == "https://chaturbate.com/"*"/" ]]; then
+	mpv --volume=0 "$(curl -s -N $cb | grep -m1 -o https://.*m3u8 | sed 's/\\u002D/-/g')"
 	exit
 fi
 
-if [[ "$(xsel -ob)" == "https://www.xnxx.com/video"* ]]; then
-	mpv --volume=0 "$(xsel -ob)"
+if [[ "$cb" == "https://www.xnxx.com/video"* ]]; then
+	mpv --volume=0 "$cb"
 	exit
 fi
 
-if [[ "$(xsel -ob)" == "https://www.xvideos.com/video"* ]]; then
-	mpv --volume=0 "$(xsel -ob)"
+if [[ "$cb" == "https://www.xvideos.com/video"* ]]; then
+	mpv --volume=0 "$cb"
 	exit
 fi
 
-if [[ "$(xsel -ob)" == "https://www.reddit.com/"* ]]; then
-	firefox "$(xsel -ob)"
+if [[ "$cb" == "https://www.reddit.com/"* ]]; then
+	firefox "$cb"
 	exit
 fi
 
-mpv "$(xsel -ob)"
+mpv "$cb"
