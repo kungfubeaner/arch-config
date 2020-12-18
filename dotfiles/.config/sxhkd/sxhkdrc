@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @s
-	rofi -show drun -theme Arc-Dark -show-icons
+	rofi -show drun -theme ~/.config/rofi/rofi.rasi -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape

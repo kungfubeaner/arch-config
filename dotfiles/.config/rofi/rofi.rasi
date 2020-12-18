@@ -1,0 +1,98 @@
+* {
+    background-color:            #18191D;
+    border-color:                #18191D;
+    text-color:                  #bbbbbb;
+    font:                        "Cantarell 11";
+    prompt-font:                 "Cantarell 10";
+    prompt-background:           #1a8771;
+    prompt-foreground:           #111111;
+    prompt-padding:              4px;
+    alternate-normal-background: #18191D;
+    alternate-normal-foreground: @text-color;
+    selected-normal-background:  #33393F;
+    selected-normal-foreground:  #3AB29B;
+    spacing:                     3;
+}
+
+#window {
+    border:  1px;
+    padding: 0px;
+	border-radius:	5px;
+	border-color:	#3AB29B;
+	border-color:	#7AA9B2;
+}
+
+#mainbox {
+    border:  2px;
+    padding: 10px;
+	border-color:	#111111;
+	border-radius:	5px;
+}
+
+#message {
+    border:       1px dash 0px 0px ;
+    padding:      1px ;
+}
+
+#listview {
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+    spacing:      2px ;
+    scrollbar:    true;
+    padding:      2px 0px 0px ;
+}
+
+#element {
+    border:  0px ;
+    padding: 1px ;
+}
+
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+#element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+#scrollbar {
+    width:        0px ;
+    border:       0;
+    handle-width: 0px ;
+    padding:      0;
+}
+#sidebar {
+    border: 2px dash 0px 0px ;
+}
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#inputbar {
+    spacing:    1px;
+    padding:    1px;
+	background-color:	#000000;
+	border:		1px;
+	border-color:		#444444;
+	border-radius:		5px;
+}
+#case-indicator {
+    spacing:    0;
+}
+#entry {
+    padding: 4px 4px;
+    expand: false;
+    width: 45%;
+	background-color:	#000000;
+	border:				0px;
+	border-color:		#444444;
+	border-radius:		2px;
+}
+#prompt {
+    padding:          @prompt-padding;
+    background-color: @prompt-background;
+    text-color:       @prompt-foreground;
+    font:             @prompt-font;
+    border-radius:    2px;
+}
