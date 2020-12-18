@@ -23,8 +23,8 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 #bspc config normal_border_color	"#004204"
-bspc config normal_border_color		"#113711"
-bspc config focused_border_color	"#008A09"
+bspc config normal_border_color		"#154038"
+bspc config focused_border_color	"#3AB29B"
 
 #bspc config normal_border_color		"#8A3D70"
 #bspc config focused_border_color	"#FF66CC"
