@@ -1,9 +1,14 @@
 [caja/window-state]
-geometry='978x526+178+128'
+geometry='611x714+332+0'
 maximized=false
 start-with-sidebar=true
 start-with-status-bar=true
 start-with-toolbar=true
+
+[calc]
+button-mode='basic'
+source-units='degree'
+target-units='radian'
 
 [desktop/accessibility/keyboard]
 bouncekeys-beep-reject=true
@@ -55,7 +60,7 @@ binding='<Mod4>Return'
 name='ST Terminal'
 
 [desktop/keybindings/custom1]
-action='rofi -show drun -theme Arc-Dark -show-icons'
+action='rofi -show drun -theme /home/dman79/.config/rofi/rofi.rasi -show-icons'
 binding='<Mod4>s'
 name='Rofi Menu'
 
@@ -70,10 +75,10 @@ binding='<Mod4>o'
 name='Handle URL'
 
 [desktop/peripherals/keyboard]
-numlock-state='on'
+numlock-state='off'
 
 [desktop/peripherals/mouse]
-accel-profile='default'
+accel-profile='flat'
 cursor-size=32
 cursor-theme='UbuntaeroStudio_v1.0'
 locate-pointer=false
@@ -82,7 +87,7 @@ motion-acceleration=10.0
 motion-threshold=10
 
 [desktop/session]
-session-start=1600814489
+session-start=1608488974
 show-hidden-apps=false
 
 [engrampa/general]
@@ -258,10 +263,15 @@ color='rgba(0,0,0,0.798993)'
 type='color'
 
 [pluma]
-active-plugins=['modelines', 'filebrowser', 'docinfo', 'spell', 'time']
+active-plugins=['docinfo', 'filebrowser', 'time', 'spell', 'modelines']
 display-line-numbers=true
 statusbar-visible=false
 toolbar-visible=false
+
+[power-manager]
+button-lid-ac='suspend'
+button-power='interactive'
+button-suspend='suspend'
 
 [screensaver]
 mode='blank-only'
