@@ -1,7 +1,9 @@
 bedstead-fonts
-lf-bin
+lf-git
+rar
 lightdm-slick-greeter
 lightdm-mini-greeter
+libxft-bgra-git
 otf-hermit
 screenkey-git
 ttf-agave
@@ -16,7 +18,6 @@ neroaacenc-bin
 neroaacdec-bin
 ookla-speedtest-bin
 compton-tryone-git
-lxappearance
 brisk-menu
 mate-tweak
 lightdm-settings

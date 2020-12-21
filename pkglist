@@ -7,6 +7,7 @@ openresolv
 dialog
 dosfstools
 dconf-editor
+lxappearance-gtk3
 feh
 firefox
 gdb
@@ -25,13 +26,14 @@ perl-rename
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
+bluez
+bluez-utils
 reflector
 reaver
 rofi
 sxhkd
 sxiv
 ttf-font-awesome
-unrar
 unzip
 usbutils
 xdo
@@ -51,6 +53,7 @@ python-pynvim
 man
 ttf-inconsolata
 terminus-font
+ttf-joypixels
 openssh
 lightdm
 zathura
