@@ -42,7 +42,7 @@ transdef() { echo; trans $1 ${@:2} && define $1 | trans ${@:2}; }
 mdless() { glow -p -s dark "$@"; }
 cbplay() { if [[ -z "$1" ]]; then r=; else r=?page=$1; fi; devour mpv --volume=0 $(curl -sL "https://chaturbate.com/female-cams/$r" | sed -n 's/<img src=".*\/\(.*\)\.jpg?[0-9]\+" width="180".*$/https:\/\/chaturbate.com\/\1\//p'); }
 
-PS1='[\[\033[01;32m\]\u@\h\[\033[0m\]:\[\033[00;36m\]\w\[\033[00m\]]\$ '
+PS1='[\[\033[01;36m\]\u@\h\[\033[0m\]:\[\033[00;94m\]\w\[\033[00m\]]\$ '
 
 #source /usr/share/doc/pkgfile/command-not-found.bash
 #xmodmap -e "keycode 135 = Super_R"
