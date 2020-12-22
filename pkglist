@@ -6,6 +6,7 @@ dhcpcd
 openresolv
 dialog
 dosfstools
+dos2unix
 dconf-editor
 lxappearance-gtk3
 feh
@@ -15,6 +16,7 @@ htop
 hwinfo
 jq
 lsof
+usbutils
 mediainfo
 mpv
 neovim
@@ -34,6 +36,7 @@ rofi
 sxhkd
 sxiv
 ttf-font-awesome
+zip
 unzip
 usbutils
 xdo
@@ -43,6 +46,7 @@ xorg-xinit
 xorg-xrandr
 xorg-xsetroot
 xsel
+xclip
 ttf-inconsolata
 python-pip
 python-wheel
