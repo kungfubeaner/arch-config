@@ -39,6 +39,7 @@ ttf-font-awesome
 zip
 unzip
 usbutils
+inetutils
 xdo
 xdotool
 xorg-server
