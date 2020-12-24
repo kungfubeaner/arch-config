@@ -12,10 +12,12 @@ lxappearance-gtk3
 feh
 firefox
 gdb
+cmake
 htop
 hwinfo
 jq
 lsof
+lua
 usbutils
 mediainfo
 mpv
